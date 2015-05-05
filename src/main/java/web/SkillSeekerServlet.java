@@ -14,10 +14,6 @@ import model.Skill;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-<<<<<<< HEAD
-import dao.JobSeekerDAO;
-=======
->>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 import dao.JobSeekerSkillDAO;
 import dao.SkillDAO;
 
@@ -31,21 +27,13 @@ public class SkillSeekerServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-<<<<<<< HEAD
-	private JobSeekerDAO seekerDAO;
-=======
 	//private JobSeekerDAO seekerDAO;
->>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 	private SkillDAO skillDAO;
 	private JobSeekerSkillDAO relDAO;
 	
     public SkillSeekerServlet() {
         super();
-<<<<<<< HEAD
-        seekerDAO= new JobSeekerDAO();
-=======
         //seekerDAO= new JobSeekerDAO();
->>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
         skillDAO = new SkillDAO();
         relDAO = new JobSeekerSkillDAO();
     }

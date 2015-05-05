@@ -89,14 +89,9 @@ public class LoginUserServlet extends HttpServlet {
 						&& user.getJobSeeker().getJobSeekerId() != null) {
 					CURRENT_JOBSEEKER_ID = user.getJobSeeker().getJobSeekerId()
 							.toString();
-<<<<<<< HEAD
-				 request.getRequestDispatcher("job_seeker_page.html").forward(request, response);
-				 return;
-=======
 					request.getRequestDispatcher("job_seeker_page.html")
 							.forward(request, response);
 					return;
->>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 				}
 			} else {
 				request.getRequestDispatcher("login1.html").forward(request,

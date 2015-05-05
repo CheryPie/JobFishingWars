@@ -1,6 +1,5 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -37,39 +36,46 @@ public class JobPostDAO {
 		em.getTransaction().commit();
 	}
 
-	
-	public void create(String companyId, String description,String[] skills){
+	public void create(String companyId, String description, String[] skills) {
 		em.getTransaction().begin();
-		Company company = em.find(Company.class,new Long(companyId));
+		Company company = em.find(Company.class, new Long(companyId));
 		JobPost post = new JobPost();
-		String idStr = em.createNativeQuery("select job_post_seq.nextval from dual").getSingleResult().toString();
+		String idStr = em
+				.createNativeQuery("select job_post_seq.nextval from dual")
+				.getSingleResult().toString();
 		post.setJobPostId(new Long(idStr));
 		post.setCompany(company);
 		post.setDescription(description);
 		em.persist(post);
-		//List<JobPostSkillRel> rels = new ArrayList<JobPostSkillRel>();
+		// List<JobPostSkillRel> rels = new ArrayList<JobPostSkillRel>();
 		for (String skill : skills) {
-			//JobPostSkillRel rel = new JobPostSkillRel();
-			//Skill skillObj = em.find(Skill.class,new Long(skill));
-			//rel.setSkill(skillObj);
-			//rel.setJobPost(post);
-			//em.persist(rel);
-			//rels.add(rel);
-			em.createNativeQuery("Insert Into Job_Post_Skill_Rel(job_post_id,skill_id) values ("+idStr+","+skill+")").executeUpdate();
+			// JobPostSkillRel rel = new JobPostSkillRel();
+			// Skill skillObj = em.find(Skill.class,new Long(skill));
+			// rel.setSkill(skillObj);
+			// rel.setJobPost(post);
+			// em.persist(rel);
+			// rels.add(rel);
+			em.createNativeQuery(
+					"Insert Into Job_Post_Skill_Rel(job_post_id,skill_id) values ("
+							+ idStr + "," + skill + ")").executeUpdate();
 		}
-//		if(rels.size()!=0){
-//			em.persist(rels);
-//		}
-		//em.flush();
+		// if(rels.size()!=0){
+		// em.persist(rels);
+		// }
+		// em.flush();
 		em.getTransaction().commit();
 		em.close();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<JobPost> findByCompany(String companyId) {
-		return em.createNativeQuery(
-				"select * from job_post where company_id=" + companyId,
-				JobPost.class).getResultList();
+		 return em.createNativeQuery(
+		 "select * from job_post where company_id=" + companyId,
+		 JobPost.class).getResultList();
+//		String txtQuery = "select p from JobPost p where p.company.companyId=:companyId";
+//		TypedQuery<JobPost> query = em.createQuery(txtQuery, JobPost.class);
+//		query.setParameter("companyId", new Long(companyId));
+//		return query.getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -82,9 +88,8 @@ public class JobPostDAO {
 								+ UserId + ")) ", JobPost.class)
 				.getResultList();
 	}
-	
-	
-	public JobPost find(Long id){
-		return em.find(JobPost.class,id);
+
+	public JobPost find(Long id) {
+		return em.find(JobPost.class, id);
 	}
 }

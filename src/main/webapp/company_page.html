@@ -6,7 +6,11 @@
 <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript">
 	$.ajax({
+<<<<<<< HEAD
 		url : '/JOBWARSDEMO/LoginUserServlet',
+=======
+		url : '/JOBWARSFIRST/LoginUserServlet',
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 		type : "GET",
 		dataType : "json",
 		success : function(data, textStatus, jqXHR) {
@@ -19,7 +23,11 @@
 		document.getElementById('companyId').value = data.companyId;
 		$
 				.ajax({
+<<<<<<< HEAD
 					url : '/JOBWARSDEMO/CompanyPostServlet?companyId='
+=======
+					url : '/JOBWARSFIRST/CompanyPostServlet?companyId='
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 							+ data.companyId,
 					type : "GET",
 					dataType : "json",
@@ -28,7 +36,11 @@
 					}
 				});
 		$.ajax({
+<<<<<<< HEAD
 			url : '/JOBWARSDEMO/SkillSeekerServlet',
+=======
+			url : '/JOBWARSFIRST/SkillSeekerServlet',
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 			type : "GET",
 			dataType : "json",
 			success : function(data, textStatus, jqXHR) {

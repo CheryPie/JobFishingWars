@@ -15,7 +15,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import dao.JobPostDAO;
+<<<<<<< HEAD
 import dao.JobSeekerDAO;
+=======
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 import dao.JobSeekerPostDAO;
 
 /**
@@ -30,14 +33,23 @@ public class SeekerPostServlet extends HttpServlet {
 	 */
 	private JobPostDAO postDAO;
 	private JobSeekerPostDAO applyDAO;
+<<<<<<< HEAD
 	private JobSeekerDAO seekerDAO;
+=======
+	//private JobSeekerDAO seekerDAO;
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 
 	public SeekerPostServlet() {
 		super();
 		postDAO = new JobPostDAO();
 		applyDAO = new JobSeekerPostDAO();
+<<<<<<< HEAD
 		seekerDAO = new JobSeekerDAO();
 	}
+=======
+		//seekerDAO = new JobSeekerDAO();
+	}	
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse

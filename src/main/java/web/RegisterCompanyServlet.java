@@ -47,4 +47,8 @@ public class RegisterCompanyServlet extends HttpServlet {
 		}
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6edbbc11435a941cb6145f44c3dd553aaf623882

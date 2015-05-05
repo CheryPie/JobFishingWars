@@ -6,7 +6,7 @@
 <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript">
 	$.ajax({
-		url : '/JOBWARSFIRST/LoginUserServlet',
+		url : '/JOBWARSDEMO/LoginUserServlet',
 		type : "GET",
 		dataType : "json",
 		success : function(data, textStatus, jqXHR) {
@@ -20,7 +20,7 @@
 		drawSkillsTable(data);
 		console.log(data);
 		$.ajax({
-			url : '/JOBWARSFIRST/SkillSeekerServlet',
+			url : '/JOBWARSDEMO/SkillSeekerServlet',
 			type : "GET",
 			dataType : "json",
 			success : function(data, textStatus, jqXHR) {
@@ -28,7 +28,7 @@
 			}
 		});
 		$.ajax({
-			url : '/JOBWARSFIRST/SkillSeekerServlet?seekerId='
+			url : '/JOBWARSDEMO/SkillSeekerServlet?seekerId='
 					+ data.jobSeekerId,
 			type : "GET",
 			dataType : "json",
@@ -38,7 +38,7 @@
 		});
 		$
 				.ajax({
-					url : '/JOBWARSFIRST/SeekerPostServlet?seekerId='
+					url : '/JOBWARSDEMO/SeekerPostServlet?seekerId='
 							+ data.jobSeekerId,
 					type : "GET",
 					dataType : "json",

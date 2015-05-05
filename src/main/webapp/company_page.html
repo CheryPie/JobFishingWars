@@ -6,7 +6,7 @@
 <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript">
 	$.ajax({
-		url : '/JOBWARSFIRST/LoginUserServlet',
+		url : '/JOBWARSDEMO/LoginUserServlet',
 		type : "GET",
 		dataType : "json",
 		success : function(data, textStatus, jqXHR) {
@@ -19,7 +19,7 @@
 		document.getElementById('companyId').value = data.companyId;
 		$
 				.ajax({
-					url : '/JOBWARSFIRST/CompanyPostServlet?companyId='
+					url : '/JOBWARSDEMO/CompanyPostServlet?companyId='
 							+ data.companyId,
 					type : "GET",
 					dataType : "json",
@@ -28,7 +28,7 @@
 					}
 				});
 		$.ajax({
-			url : '/JOBWARSFIRST/SkillSeekerServlet',
+			url : '/JOBWARSDEMO/SkillSeekerServlet',
 			type : "GET",
 			dataType : "json",
 			success : function(data, textStatus, jqXHR) {
